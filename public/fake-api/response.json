@@ -1,0 +1,88 @@
+{
+  "mainHome": {
+    "title": "Valtech_",
+    "baseline": "front-end",
+    "intro": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor.",
+    "images": {
+      "xs": "/fake-storage/valtech.jpeg",
+      "s": "/fake-storage/valtech.jpeg",
+      "m": "/fake-storage/valtech.jpeg",
+      "l": "/fake-storage/valtech.jpeg",
+      "xl": "/fake-storage/valtech.jpeg"
+    }
+  },
+  "countries": [
+    {
+      "title": "Venice",
+      "baseline": "Italy",
+      "intro": "Venice is a city in northeastern Italy and the capital of the Veneto region. It is built on a group of 126 islands that are separated by expanses of open water and by canals; portions of the city are linked by 472 bridges",
+      "images": {
+        "xs": "/fake-storage/venice.jpeg",
+        "s": "/fake-storage/venice.jpeg",
+        "m": "/fake-storage/venice.jpeg",
+        "l": "/fake-storage/venice.jpeg",
+        "xl": "/fake-storage/venice.jpeg"
+      }
+    },
+    {
+      "title": "Berlin",
+      "baseline": "Germany",
+      "intro": "Berlin is the capital and largest city of Germany, both by area and by population. Its more than 3.85 million inhabitants make it the European Union's most populous city, as measured by population within city limits",
+      "images": {
+        "xs": "/fake-storage/berlin.jpeg",
+        "s": "/fake-storage/berlin.jpeg",
+        "m": "/fake-storage/berlin.jpeg",
+        "l": "/fake-storage/berlin.jpeg",
+        "xl": "/fake-storage/berlin.jpeg"
+      }
+    },
+    {
+      "title": "Barcelona",
+      "baseline": "Spain",
+      "intro": "Barcelona is a city on the northeastern coast of Spain. It is the capital and largest city of the autonomous community of Catalonia, as well as the second-most populous municipality of Spain",
+      "images": {
+        "xs": "/fake-storage/barcelona.jpeg",
+        "s": "/fake-storage/barcelona.jpeg",
+        "m": "/fake-storage/barcelona.jpeg",
+        "l": "/fake-storage/barcelona.jpeg",
+        "xl": "/fake-storage/barcelona.jpeg"
+      }
+    },
+    {
+      "title": "Paris",
+      "baseline": "France",
+      "intro": "Paris is the capital and most populous city of France. With an official estimated population of 2,102,650 residents as of 1 January 2023 in an area of more than 105 km2 (41 sq mi)",
+      "images": {
+        "xs": "/fake-storage/paris.jpeg",
+        "s": "/fake-storage/paris.jpeg",
+        "m": "/fake-storage/paris.jpeg",
+        "l": "/fake-storage/paris.jpeg",
+        "xl": "/fake-storage/paris.jpeg"
+      }
+    },
+    {
+      "title": "Amsterdam",
+      "baseline": "Netherlands",
+      "intro": "Amsterdam is the capital and most populated city of the Netherlands. It has a population of 921,402 within the city proper, 1,457,018 in the urban area and 2,480,394 in the metropolitan area.",
+      "images": {
+        "xs": "/fake-storage/amsterdam.jpeg",
+        "s": "/fake-storage/amsterdam.jpeg",
+        "m": "/fake-storage/amsterdam.jpeg",
+        "l": "/fake-storage/amsterdam.jpeg",
+        "xl": "/fake-storage/amsterdam.jpeg"
+      }
+    },
+    {
+      "title": "London",
+      "baseline": "United Kingdom",
+      "intro": "London is the capital and largest city of both England and the United Kingdom, with a population of around 8.8 million,[1] and its metropolitan area is the largest in Western Europe, with a population of 14.9 million",
+      "images": {
+        "xs": "/fake-storage/london.jpeg",
+        "s": "/fake-storage/london.jpeg",
+        "m": "/fake-storage/london.jpeg",
+        "l": "/fake-storage/london.jpeg",
+        "xl": "/fake-storage/london.jpeg"
+      }
+    }
+  ]
+}

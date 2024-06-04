@@ -1,0 +1,19 @@
+@import url('@fontsource/roboto/400.css');
+@import url('@fontsource/roboto/700.css');
+
+@import "normalize.css";
+
+html, body, #app {
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+}
+
+#app {
+  padding: 0 3vw;
+  max-width: 1280px;
+  margin: 4rem auto;
+  @media screen and (min-width: 768px ) {
+    padding: 0 5vw;
+  }
+
+}
