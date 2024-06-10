@@ -1,35 +1,40 @@
 <template>
-  <div class="container" @mouseenter="hovering = true" @mouseleave="hovering = false">
+  <article class="card">
     <img
       :src="images.xs"
       :srcset="`${images.xs} 320w, ${images.s} 575w, ${images.m} 768w, ${images.l} 1024w, ${images.xl} 1280w`"
       :alt="onTitle"
-      class="bg"
-      :class="{ hovering: hovering && subTitle }"
+      class="card_bg"
     >
     <a
-      v-if="!activateHover" href="https://github.com/JereMiO/project_valtech" target="_blank" class="link-to-github"
+      v-if="opacity" href="https://github.com/JereMiO/project_valtech" target="_blank"
+      class="card_link-to-github"
     >
       <img
         width="50px"
         src="/github-mark-white.svg" alt="github"
       >
     </a>
-    <div class="text-centered">
-      <div v-if="onTitle" class="on-title">
+    <div class="card_text">
+      <h1 v-if="onTitle" class="card_text_on-title">
         {{ onTitle }}
-      </div>
-      <div v-if="title" class="title">
+      </h1>
+      <h2 v-if="title" class="card_text_title">
         {{ title }}
-      </div>
-      <div v-if="(subTitle && hovering) || !activateHover" class="sub-title">
+      </h2>
+      <p
+        class="card_text_content card_text_content_sub-title"
+      >
         {{ subTitle }}
-      </div>
-      <div v-if="subTitle && hovering && activateHover" class="link">
-        <a :href="`https://en.wikipedia.org/wiki/${title}`" target="_blank">Wikipedia</a>
-      </div>
+      </p>
+      <a
+        class="card_text_content card_text_content_link"
+        :href="`https://en.wikipedia.org/wiki/${title}`" target="_blank"
+      >
+        Wikipedia
+      </a>
     </div>
-  </div>
+  </article>
 </template>
 
 <script setup lang="ts">
@@ -39,7 +44,7 @@ defineProps<{
   onTitle: string
   title: string
   subTitle?: string
-  activateHover: boolean
+  opacity: number
 }>()
 
 interface Images {
@@ -49,12 +54,10 @@ interface Images {
   l: string
   xl: string
 }
-
-const hovering = ref(false)
 </script>
 
 <style scoped>
-.container {
+.card {
   position: relative;
   text-align: center;
   color: white;
@@ -65,55 +68,63 @@ const hovering = ref(false)
   @media screen and (min-width: 768px) {
     min-height: 28rem;
   }
+}
 
-  .bg {
-    display: block;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-  }
+.card_bg {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
 
-  .hovering {
-    filter: brightness(50%);
-    transition: all 300ms ease-out;
-  }
+.card:hover > .card_bg {
+  filter: brightness(50%);
+  transition: all 300ms ease-out;
+}
 
-  .link-to-github {
-    position:absolute;
-    top:0;
-    right:0;
-  }
+.card:hover > .card_text .card_text_content{
+  opacity: 1
+}
 
-  .text-centered {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+.card_link-to-github {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
 
-    .on-title, .title {
-      font-size: 1.4rem;
-      text-transform: uppercase;
-      margin-bottom: 1.2rem;
-    }
+.card_text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
 
-    .title {
-      font-weight: 700;
-    }
+.card_text_on-title, .card_text_title {
+  font-size: 1.4rem;
+  text-transform: uppercase;
+  margin-bottom: 1.2rem;
+}
 
-    .sub-title {
-      font-size: .85rem;
-      margin-bottom: 2rem;
-      line-height: 1.4rem;
-      overflow: hidden;
-    }
+.card_text_title {
+  font-weight: 700;
+}
 
-    .link > a {
-      text-decoration: none;
-      padding: 0.5rem;
-      color: white;
-      border: solid white 1px;
-      width: fit-content;
-    }
-  }
+.card_text_content{
+  opacity: v-bind('opacity');
+}
+
+.card_text_content_sub-title {
+  font-size: .85rem;
+  margin-bottom: 2rem;
+  line-height: 1.4rem;
+  overflow: hidden;
+}
+
+.card_text_content_link {
+  text-decoration: none;
+  padding: 0.5rem;
+  color: white;
+  border: solid white 1px;
+  width: fit-content;
 }
 </style>

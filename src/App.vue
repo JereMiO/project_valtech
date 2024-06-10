@@ -8,7 +8,7 @@
         :sub-title="main.intro"
         :alt="main.title"
         :images="main.images"
-        :activate-hover="false"
+        :opacity="1"
       />
       <div v-if="countries.length > 0" class="grid">
         <Card
@@ -18,7 +18,7 @@
           :sub-title="country.intro"
           :alt="country.title"
           :images="country.images"
-          :activate-hover="true"
+          :opacity="0"
         />
       </div>
     </template>
@@ -26,7 +26,7 @@
 </template>
 
 <script setup lang="ts">
-import { fetchData } from '~/services/countries'
+import { fetchCountries } from '~/services/countries'
 import Loader from '~/components/Loader.vue'
 import Card from '~/components/Card.vue'
 
@@ -34,32 +34,35 @@ const main = ref()
 const countries = ref()
 const pending = ref(true)
 
-onMounted(() => {
-  fetchData().then((response) => {
+onMounted(async () => {
+  try {
+    const response = await fetchCountries()
     main.value = response.mainHome
     countries.value = response.countries
-    pending.value = false
-  }).catch((error) => {
+  }
+  catch (error) {
     console.log('catch', error)
-  }).finally(() => {
+  }
+  finally {
     pending.value = false
-  })
-},
-)
+  }
+})
 </script>
 
 <style scoped>
 @media screen and (min-width: 768px) {
   .grid {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
     gap: 1rem;
-    .container {
+    grid-template-columns: repeat(4, 1fr);
+
+    .card {
       margin-bottom: 0;
 
       &:nth-child(6n + 1) {
         grid-column: 1 / 3;
       }
+
       &:nth-child(6n + 6) {
         grid-column: 3 / 5;
       }
